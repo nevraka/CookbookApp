@@ -1,11 +1,17 @@
 import React from 'react';
 import Recipes from './Recipes';
+import SearchInput from './SearchInput';
+import { DataProvider } from '../context/DataContext';
+import './app.css';
 
 function App() {
   return (
-    <div>
-      <Recipes />
-    </div>
+    <DataProvider>
+      <div className="appbg">
+        <SearchInput />
+        <Recipes />
+      </div>
+    </DataProvider>
   );
 }
 
