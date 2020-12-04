@@ -1,0 +1,4 @@
+.allcards {
+  display: flex;
+  flex-direction: column;
+}
