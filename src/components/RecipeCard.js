@@ -11,7 +11,9 @@ function RecipeCard({ recipes }) {
             <Item>
               <Item.Image src={recipe.recipe.image} />
               <Item.Content>
-                <Item.Header as="a">{recipe.recipe.label}</Item.Header>
+                <Item.Header className="item-header" as="a">
+                  {recipe.recipe.label}
+                </Item.Header>
                 {recipe.recipe.ingredientLines.map((ing) => {
                   return <Item.Description>{ing}</Item.Description>;
                 })}

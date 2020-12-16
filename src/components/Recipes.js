@@ -7,17 +7,17 @@ import './header.css';
 
 const APP_ID = process.env.REACT_APP_APP_ID;
 const APP_KEY = process.env.REACT_APP_APP_KEY;
+const API_URL = 'https://api.edamam.com';
 
 function Recipes() {
   const [searchTerm] = useContext(DataContext);
   const [recipes, setRecipes] = useState([]);
   const debouncedSearchTerm = useDebounce(searchTerm, 750);
+  const url = `${API_URL}/search?q=${debouncedSearchTerm}&app_id=${APP_ID}&app_key=${APP_KEY}`;
 
   useEffect(() => {
     async function fetchMyAPI() {
-      let response = await fetch(
-        `https://api.edamam.com/search?q=${debouncedSearchTerm}&app_id=${APP_ID}&app_key=${APP_KEY}`
-      );
+      let response = await fetch(url);
       response = await response.json();
       setRecipes(response.hits);
       console.log(response.hits);

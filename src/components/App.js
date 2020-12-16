@@ -7,8 +7,10 @@ import './app.css';
 function App() {
   return (
     <DataProvider>
-      <div className="appbg">
+      <div className="input">
         <SearchInput />
+      </div>
+      <div className="appbg">
         <Recipes />
       </div>
     </DataProvider>
