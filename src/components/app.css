@@ -1,3 +1,10 @@
 .appbg {
   background-color: #fbeec1;
 }
+.input {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #fbeec1;
+  padding-top: 20px;
+}
