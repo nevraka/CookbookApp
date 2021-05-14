@@ -3,6 +3,9 @@ import { Item, Label } from 'semantic-ui-react';
 import './recipecard.css';
 
 function RecipeCard({ recipes }) {
+  if (recipes.length === 0) {
+    return null;
+  }
   return (
     <div className="allcards">
       {recipes.map((recipe) => {
@@ -19,8 +22,8 @@ function RecipeCard({ recipes }) {
                 })}
                 {recipe.recipe.healthLabels.map((hl) => {
                   return (
-                    <Label as="a" color="blue">
-                      <Label.Detail>{hl}</Label.Detail>
+                    <Label as="a" color="blue" className="label">
+                      {hl}
                     </Label>
                   );
                 })}

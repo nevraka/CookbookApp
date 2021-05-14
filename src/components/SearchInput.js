@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { DataContext } from '../context/DataContext';
 import './input.css';
 
-function SearchInput({}) {
+function SearchInput() {
   const [searchTerm, setSearchTerm] = useContext(DataContext);
 
   const handleChange = (e) => {

@@ -16,14 +16,14 @@ function Recipes() {
   const url = `${API_URL}/search?q=${debouncedSearchTerm}&app_id=${APP_ID}&app_key=${APP_KEY}`;
 
   useEffect(() => {
-    async function fetchMyAPI() {
+    async function fetchRecipes() {
       let response = await fetch(url);
       response = await response.json();
       setRecipes(response.hits);
       console.log(response.hits);
     }
-    fetchMyAPI();
-  }, [debouncedSearchTerm]);
+    fetchRecipes();
+  }, [debouncedSearchTerm, url]);
 
   return (
     <div className="page-header">
